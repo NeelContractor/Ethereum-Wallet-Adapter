@@ -5,14 +5,14 @@ import { injected, metaMask, safe } from 'wagmi/connectors';
 
 
 export const config = createConfig({
-    chains: [sepolia], //mainnet, base
+    chains: [sepolia, mainnet], //mainnet, base
     connectors: [
         injected(),
         metaMask(),
         safe(),
     ],
     transports: {
-        // [mainnet.id]: http('https://mainnet.example.com'),
+        [mainnet.id]: http(),
         // [base.id]: http(),
         [sepolia.id]: http()
     }
